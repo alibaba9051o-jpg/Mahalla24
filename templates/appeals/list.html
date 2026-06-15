@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Mening murojaatlarim{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Sarlavha</th>
+                <th>Kategoriya</th>
+                <th>Status</th>
+                <th>Sana</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for appeal in appeals %}
+
+            <tr>
+                <td>{{ appeal.title }}</td>
+
+                <td>{{ appeal.category }}</td>
+
+                <td>{{ appeal.status }}</td>
+
+                <td>{{ appeal.created_at }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

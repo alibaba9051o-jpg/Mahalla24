@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Mahalla24
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+
+
+<h1 class="display-4 fw-bold">
+    Mahalla24
+</h1>
+
+<p class="lead">
+    Mahallangizdagi muammolar haqida 24 soat murojaat yuborishingiz mumkin.
+</p>
+
+
+</div>
+
+<div class="row mt-5">
+
+
+<div class="col-md-6 mb-3">
+
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+
+            <h4>
+                Murojaat yuborish
+            </h4>
+
+            <p>
+                Mahalladagi muammo haqida yangi murojaat yarating.
+            </p>
+
+            <a href="/appeal/create/" class="btn btn-primary">
+                Ochish
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+
+            <h4>
+                Mening murojaatlarim
+            </h4>
+
+            <p>
+                Yuborilgan murojaatlarni kuzatish.
+            </p>
+
+            <a href="/my-appeals/" class="btn btn-success">
+                Ochish
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

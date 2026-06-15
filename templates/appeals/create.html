@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Murojaat yuborish{% endblock %}
+
+{% block content %}
+
+    <div class="card shadow">
+        <div class="card-body">
+
+            <h2 class="mb-4">
+                Yangi murojaat
+            </h2>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button type="submit" class="btn btn-primary">
+                    Yuborish
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
