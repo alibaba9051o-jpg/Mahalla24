@@ -4,37 +4,81 @@
 
 {% block content %}
 
-    <table class="table">
+<div class="card shadow">
+    <div class="card-body">
 
-        <thead>
-            <tr>
-                <th>Sarlavha</th>
-                <th>Kategoriya</th>
-                <th>Status</th>
-                <th>Sana</th>
-            </tr>
-        </thead>
+        <h2 class="mb-4">
+            Mening murojaatlarim
+        </h2>
 
-        <tbody>
+        <table class="table table-bordered">
 
-            {% for appeal in appeals %}
+            <thead>
+                <tr>
+                    <th>Sarlavha</th>
+                    <th>Kategoriya</th>
+                    <th>Muhimlik</th>
+                    <th>Kalit so'zlar</th>
+                    <th>Status</th>
+                    <th>Sana</th>
+                </tr>
+            </thead>
 
-            <tr>
-                <td>{{ appeal.title }}</td>
+            <tbody>
 
-                <td>{{ appeal.category }}</td>
+                {% for appeal in appeals %}
 
-                <td>{{ appeal.status }}</td>
+                <tr>
 
-                <td>{{ appeal.created_at }}</td>
-            </tr>
+                    <td>{{ appeal.title }}</td>
 
-            {% endfor %}
+                    <td>{{ appeal.category }}</td>
 
-        </tbody>
+                    <td>
 
-    </table>
+                        {% if appeal.priority == 'urgent' %}
 
+                            <span class="badge bg-danger">
+                                Shoshilinch
+                            </span>
+
+                        {% elif appeal.priority == 'medium' %}
+
+                            <span class="badge bg-warning text-dark">
+                                Zarur
+                            </span>
+
+                        {% else %}
+
+                            <span class="badge bg-secondary">
+                                Oddiy
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+                        {{ appeal.keywords }}
+                    </td>
+
+                    <td>
+                        {{ appeal.status }}
+                    </td>
+
+                    <td>
+                        {{ appeal.created_at }}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
 </div>
 
 {% endblock %}
