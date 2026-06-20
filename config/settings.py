@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -138,5 +142,4 @@ SPECTACULAR_SETTINGS = {
 }
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
